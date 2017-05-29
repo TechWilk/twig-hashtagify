@@ -1,17 +1,7 @@
 <?php
 namespace TechWilk\Twig\Extension;
 
-class HashtagifyUrlInterface
+interface HashtagifyUrlGeneratorInterface
 {
-  private $urlBase;
-
-  public function __construct($urlBase)
-  {
-    $this->urlBase = $urlBase;
-  }
-
-  public function urlForHashtag($hashtag)
-  {
-    return $this->urlBase . $hashtag;
-  }
+  public function urlForHashtag($hashtag);
 }
