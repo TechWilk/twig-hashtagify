@@ -12,7 +12,7 @@ class Hashtagify extends \Twig_Extension
 
   public function hashtagify($text, $baseUrl)
   {
-      $text =  preg_replace('/#(\w+)/', ' <a href="'.$urlGenerator->urlForHashtag('$1').'">#$1</a>', $text);
+      $text =  preg_replace('/#(\w+)/', ' <a href="'.$this->urlGenerator->urlForHashtag('$1').'">#$1</a>', $text);
 
       return $text;
   }
@@ -25,6 +25,6 @@ class Hashtagify extends \Twig_Extension
           array($this, 'hashtagify')
           //array('is_safe' => array('html'))
       )
-  );
+    );
   }
 }
