@@ -1,0 +1,24 @@
+{
+    "name": "techwilk/twig-hashtagify",
+    "description": "TWIG extension to ",
+    "keywords": ["twig","extension","hashtagify"],
+    "homepage": "https://wilk.tech",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Wilkinson",
+            "email": "git@wilk.tech"
+        }
+    ],
+    "require": {
+        "twig/twig": "~1.27|~2.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "~3.3@dev",
+        "symfony/translation": "~2.3|~3.0"
+    },
+    "autoload": {
+        "psr-4": { "TechWilk\\Twig\\Extension\\": "src/" }
+    }
+}
