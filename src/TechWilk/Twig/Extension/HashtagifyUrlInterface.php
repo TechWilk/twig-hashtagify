@@ -1,7 +1,7 @@
 <?php
 namespace TechWilk\Twig\Extension;
 
-class HashtagifyUrlGenerator
+class HashtagifyUrlInterface
 {
   private $urlBase;
 

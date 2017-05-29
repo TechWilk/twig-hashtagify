@@ -5,7 +5,7 @@ class Hashtagify extends \Twig_Extension
 {
   private $urlGenerator;
 
-  public function __construct(HashtagifyUrlGenerator $urlGenerator)
+  public function __construct(HashtagifyUrlInterface $urlGenerator)
   {
     $this->urlGenerator = $urlGenerator;
   }
