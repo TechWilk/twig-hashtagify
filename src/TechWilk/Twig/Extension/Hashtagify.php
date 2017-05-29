@@ -10,11 +10,16 @@ class Hashtagify extends \Twig_Extension
     $this->urlGenerator = $urlGenerator;
   }
 
-  public function hashtagify($text, $baseUrl)
+  public function hashtagify($text, $baseUrl = '')
   {
-      $text =  preg_replace('/#(\w+)/', ' <a href="'.$this->urlGenerator->urlForHashtag('$1').'">#$1</a>', $text);
-
-      return $text;
+    if ($baseUrl == '')
+    {
+      return preg_replace('/#(\w+)/', ' <a href="'.$this->urlGenerator->urlForHashtag('$1').'">#$1</a>', $text);
+    }
+    else
+    {
+      return preg_replace('/#(\w+)/', ' <a href="'.$baseUrl.'$1">#$1</a>', $text);
+    }
   }
 
   public function getFilters()
