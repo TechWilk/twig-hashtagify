@@ -12,7 +12,7 @@ class SlimHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
     $this->router = $router;
   }
 
-  public function generate($hashtag)
+  public function urlForHashtag($hashtag)
   {
     return $this->router->pathFor('tag', [ 'tag' => $hashtag ] );
   }
