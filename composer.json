@@ -19,6 +19,6 @@
         "symfony/translation": "~2.3|~3.0"
     },
     "autoload": {
-        "psr-4": { "TechWilk\\Twig\\Extension\\": "src/" }
+        "psr-0": { "TechWilk": "src/" }
     }
 }
