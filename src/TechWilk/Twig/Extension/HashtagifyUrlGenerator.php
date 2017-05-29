@@ -10,7 +10,7 @@ class HashtagifyUrlGenerator
     $this->urlBase = $urlBase;
   }
 
-  public function generate($hashtag)
+  public function urlForHashtag($hashtag)
   {
     return $this->urlBase . $hashtag;
   }
