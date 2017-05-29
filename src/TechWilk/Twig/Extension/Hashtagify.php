@@ -16,4 +16,15 @@ class Hashtagify extends \Twig_Extension
 
       return $text;
   }
+
+  public function getFilters()
+  {
+    return array(
+      new \Twig_SimpleFilter(
+          'hashtagify',
+          array($this, 'hashtagify')
+          //array('is_safe' => array('html'))
+      )
+  );
+  }
 }
