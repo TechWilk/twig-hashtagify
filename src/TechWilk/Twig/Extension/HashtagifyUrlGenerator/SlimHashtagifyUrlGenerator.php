@@ -7,7 +7,7 @@ class SlimHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
 {
   private $router;
 
-  public function __construct(\Slim\App\Router $router)
+  public function __construct(\Slim\Router $router)
   {
     $this->router = $router;
   }
