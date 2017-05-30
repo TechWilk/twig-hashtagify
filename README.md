@@ -8,10 +8,19 @@ TWIG filter to turn hashtags into html links. Provides interfaces to work with a
 
 `composer require techwilk/twig-hashtagify`
 
-2. Then configure base url using one of the interfaces provided, or write your own.
+2. Then configure base url using one of the interfaces provided, or write your own:
+
+### Basic Interface:
 
 ``` php
 $urlGenerator = new \TechWilk\Twig\Extension\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator('http://example.com/hashtag/');
+$twig->addExtension(new \TechWilk\Twig\Extension\Hashtagify($urlGenerator));
+```
+
+### Slim Router Interface:
+
+``` php
+$urlGenerator = new \TechWilk\Twig\Extension\HashtagifyUrlGenerator\SlimHashtagifyUrlGenerator($router, 'route-name', 'argument-name');
 $twig->addExtension(new \TechWilk\Twig\Extension\Hashtagify($urlGenerator));
 ```
 
