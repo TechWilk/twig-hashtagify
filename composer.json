@@ -1,7 +1,7 @@
 {
     "name": "techwilk/twig-hashtagify",
-    "description": "TWIG extension to ",
-    "keywords": ["twig","extension","hashtagify"],
+    "description": "TWIG filter to turn hashtags into html links.",
+    "keywords": ["twig","extension","hashtag", "filter"],
     "homepage": "https://wilk.tech",
     "type": "library",
     "license": "MIT",
@@ -13,10 +13,6 @@
     ],
     "require": {
         "twig/twig": "~1.27|~2.0"
-    },
-    "require-dev": {
-        "symfony/phpunit-bridge": "~3.3@dev",
-        "symfony/translation": "~2.3|~3.0"
     },
     "autoload": {
         "psr-0": { "TechWilk": "src/" }
