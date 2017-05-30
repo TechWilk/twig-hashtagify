@@ -1,5 +1,9 @@
 # Hashtagify (filter for TWIG)
 
+[![Total Downloads](https://img.shields.io/packagist/dt/techwilk/twig-hashtagify.svg)](https://packagist.org/packages/techwilk/twig-hashtagify)
+[![Latest Stable Version](https://img.shields.io/packagist/v/techwilk/twig-hashtagify.svg)](https://packagist.org/packages/techwilk/twig-hashtagify)
+[![License](https://img.shields.io/packagist/l/techwilk/twig-hashtagify.svg)](https://packagist.org/packages/techwilk/twig-hashtagify)
+
 TWIG filter to turn hashtags into html links. Provides interfaces to work with a Slim Framework Router, or a base URL.
 
 ## Installation
