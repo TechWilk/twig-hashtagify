@@ -38,9 +38,13 @@ Use as a standard twig filter:
 
 Turns this:
 
-`This is some text with #hashtags in it`
+```
+This is some text with #hashtags in it
+```
 
 Into this:
 
-`This is some text with <a href="http://example.com/hashtag/hashtags">#hashtags</a> in it`
+```
+This is some text with <a href="http://example.com/hashtag/hashtags">#hashtags</a> in it
+```
 
