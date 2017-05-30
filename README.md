@@ -6,7 +6,9 @@ TWIG filter to turn hashtags into html links. Provides interfaces to work with a
 
 1. Install through composer.
 
-`composer require techwilk/twig-hashtagify`
+```
+composer require techwilk/twig-hashtagify
+```
 
 2. Then configure base url using one of the interfaces provided, or write your own:
 
@@ -28,7 +30,9 @@ $twig->addExtension(new \TechWilk\Twig\Extension\Hashtagify($urlGenerator));
 
 Use as a standard twig filter:
 
-`{{ 'this text with #hashtags' | hashtagify }}`
+``` twig
+{{ 'this text with #hashtags' | hashtagify }}
+```
 
 ## Example
 
