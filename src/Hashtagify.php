@@ -13,7 +13,6 @@ class Hashtagify extends \Twig_Extension
 
     public function hashtagify(string $text, ?string $baseUrl = ''): string
     {
-        $text = htmlentities($text, ENT_QUOTES);
         $url = $this->getUrl($baseUrl);
 
         return preg_replace('/#(\w+)/', ' <a href="'.htmlentities($url, ENT_QUOTES).'">#$1</a>', $text);
