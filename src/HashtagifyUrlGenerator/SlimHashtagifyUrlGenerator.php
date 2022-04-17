@@ -1,8 +1,8 @@
 <?php
 
-namespace TechWilk\Twig\Extension\HashtagifyUrlGenerator;
+namespace TechWilk\TwigHashtagify\HashtagifyUrlGenerator;
 
-use TechWilk\Twig\Extension\HashtagifyUrlGeneratorInterface;
+use TechWilk\TwigHashtagify\HashtagifyUrlGeneratorInterface;
 
 class SlimHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
 {

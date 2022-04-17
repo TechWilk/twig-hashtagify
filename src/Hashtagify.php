@@ -1,6 +1,6 @@
 <?php
 
-namespace TechWilk\Twig\Extension;
+namespace TechWilk\TwigHashtagify;
 
 class Hashtagify extends \Twig_Extension
 {
@@ -15,9 +15,9 @@ class Hashtagify extends \Twig_Extension
     {
         if ($baseUrl == '') {
             return preg_replace('/#(\w+)/', ' <a href="'.$this->urlGenerator->urlForHashtag('$1').'">#$1</a>', $text);
-        } else {
-            return preg_replace('/#(\w+)/', ' <a href="'.$baseUrl.'$1">#$1</a>', $text);
         }
+        
+        return preg_replace('/#(\w+)/', ' <a href="'.$baseUrl.'$1">#$1</a>', $text);
     }
 
     public function getFilters()
