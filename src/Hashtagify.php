@@ -2,7 +2,7 @@
 
 namespace TechWilk\TwigHashtagify;
 
-class Hashtagify extends \Twig_Extension
+class Hashtagify extends \Twig\Extension\AbstractExtension
 {
     private $urlGenerator;
 
@@ -30,7 +30,7 @@ class Hashtagify extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter(
+            new \Twig\TwigFilter(
                 'hashtagify',
                 [$this, 'hashtagify'],
                 [

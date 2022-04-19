@@ -1,0 +1,17 @@
+--TEST--
+"hashtagify" filter
+--TEMPLATE--
+{{ ('This is some text with #hashtags in it')|hashtagify }}
+{{ ('This is some text with #hashtags in it')|hashtagify('https://example.com/base-test/') }}
+{{ textWithoutHashtags|hashtagify }}
+{{ textWithHashtags|hashtagify }}
+--DATA--
+return [
+    'textWithoutHashtags' => 'Example text with no hashtags', 
+    'textWithHashtags' => 'Contains #blue and #green things', 
+]
+--EXPECT--
+This is some text with  <a href="http://example.com/hashtag/hashtags">#hashtags</a> in it
+This is some text with  <a href="https://example.com/base-test/hashtags">#hashtags</a> in it
+Example text with no hashtags
+Contains  <a href="http://example.com/hashtag/blue">#blue</a> and  <a href="http://example.com/hashtag/green">#green</a> things
