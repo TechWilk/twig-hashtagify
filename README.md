@@ -42,13 +42,13 @@ Use as a standard twig filter:
 
 Turns this:
 
-```
+``` html
 This is some text with #hashtags in it
 ```
 
 Into this:
 
-```
+``` html
 This is some text with <a href="http://example.com/hashtag/hashtags">#hashtags</a> in it
 ```
 
