@@ -7,8 +7,8 @@
 {{ textWithHashtags|hashtagify }}
 --DATA--
 return [
-    'textWithoutHashtags' => 'Example text with no hashtags', 
-    'textWithHashtags' => 'Contains #blue and #green things', 
+  'textWithoutHashtags' => 'Example text with no hashtags',
+  'textWithHashtags' => 'Contains #blue and #green things',
 ]
 --EXPECT--
 This is some text with  <a href="http://example.com/hashtag/hashtags">#hashtags</a> in it
