@@ -23,14 +23,14 @@ class Hashtagify extends \Twig_Extension
     public function getFilters()
     {
         return [
-      new \Twig_SimpleFilter(
-          'hashtagify',
-          [$this, 'hashtagify'],
-          [
-            'pre_escape' => 'html',
-            'is_safe'    => ['html'],
-          ]
-      ),
-    ];
+            new \Twig_SimpleFilter(
+                'hashtagify',
+                [$this, 'hashtagify'],
+                [
+                    'pre_escape' => 'html',
+                    'is_safe'    => ['html'],
+                ]
+            ),
+        ];
     }
 }
