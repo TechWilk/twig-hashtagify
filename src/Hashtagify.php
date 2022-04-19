@@ -23,7 +23,7 @@ class Hashtagify extends \Twig\Extension\AbstractExtension
         if ($baseUrl !== '') {
             return $baseUrl.'$1';
         }
-        
+
         return $this->urlGenerator->urlForHashtag('$1');
     }
 
