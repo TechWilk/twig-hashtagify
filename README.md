@@ -19,15 +19,15 @@ composer require techwilk/twig-hashtagify
 ### Basic Interface:
 
 ``` php
-$urlGenerator = new \TechWilk\Twig\Extension\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator('http://example.com/hashtag/');
-$twig->addExtension(new \TechWilk\Twig\Extension\Hashtagify($urlGenerator));
+$urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator('http://example.com/hashtag/');
+$twig->addExtension(new \TechWilk\TwigHashtagify\Hashtagify($urlGenerator));
 ```
 
 ### Slim Router Interface:
 
 ``` php
-$urlGenerator = new \TechWilk\Twig\Extension\HashtagifyUrlGenerator\SlimHashtagifyUrlGenerator($router, 'route-name', 'argument-name');
-$twig->addExtension(new \TechWilk\Twig\Extension\Hashtagify($urlGenerator));
+$urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\SlimHashtagifyUrlGenerator($router, 'route-name', 'argument-name');
+$twig->addExtension(new \TechWilk\TwigHashtagify\Hashtagify($urlGenerator));
 ```
 
 ## Use

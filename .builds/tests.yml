@@ -1,0 +1,13 @@
+image: archlinux
+packages:
+  - php
+  - composer
+sources:
+  - https://git.sr.ht/~techwilk/twig-hashtagify
+tasks:
+  - setup: |
+      cd twig-hashtagify
+      composer install
+  - test: |
+      cd twig-hashtagify
+      composer test

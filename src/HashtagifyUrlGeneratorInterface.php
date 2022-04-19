@@ -1,6 +1,6 @@
 <?php
 
-namespace TechWilk\Twig\Extension;
+namespace TechWilk\TwigHashtagify;
 
 interface HashtagifyUrlGeneratorInterface
 {
