@@ -19,15 +19,31 @@ composer require techwilk/twig-hashtagify
 ### Basic Interface:
 
 ``` php
-$urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator('http://example.com/hashtag/');
-$twig->addExtension(new \TechWilk\TwigHashtagify\Hashtagify($urlGenerator));
+use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator;
+use TechWilk\TwigHashtagify\HashtagifyExtension;
+use TechWilk\TwigHashtagify\HashtagifyRuntimeLoader;
+
+$urlGenerator = new BasicHashtagifyUrlGenerator('https://example.com/hashtag/');
+$twig->addExtension(new HashtagifyExtension());
+$twig->addRuntimeLoader(new HashtagifyRuntimeLoader($urlGenerator));
 ```
 
 ### Slim Router Interface:
 
+Add the following extension as a twig dependency
+
+```php
+use TechWilk\TwigHashtagify\HashtagifyExtension;
+
+$twig->addExtension(new HashtagifyExtension());
+```
+
+Add the following middleware after your `TwigMiddleware` to setup our dependencies
+
 ``` php
-$urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\SlimHashtagifyUrlGenerator($router, 'route-name', 'argument-name');
-$twig->addExtension(new \TechWilk\TwigHashtagify\Hashtagify($urlGenerator));
+use TechWilk\TwigHashtagify\HashtagifyMiddleware;
+
+$app->add(HashtagifyMiddleware::createFromContainer($app, 'route-name', 'argument-name'));
 ```
 
 ## Use
