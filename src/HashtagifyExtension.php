@@ -2,8 +2,6 @@
 
 namespace TechWilk\TwigHashtagify;
 
-use TechWilk\TwigHashtagify\Hashtagify;
-
 class HashtagifyExtension extends \Twig\Extension\AbstractExtension
 {
     public function getName(): string
