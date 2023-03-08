@@ -2,7 +2,7 @@
 
 namespace TechWilk\TwigHashtagify;
 
-use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator;
+use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BaseUrlHashtagifyUrlGenerator;
 
 class Hashtagify
 {
@@ -33,7 +33,7 @@ class Hashtagify
         $urlGenerator = $this->urlGenerator;
 
         if ($baseUrl !== '') {
-            $urlGenerator = new BasicHashtagifyUrlGenerator($baseUrl);
+            $urlGenerator = new BaseUrlHashtagifyUrlGenerator($baseUrl);
         }
 
         return $urlGenerator->urlForHashtag($hashtag);

@@ -16,14 +16,14 @@ composer require techwilk/twig-hashtagify
 
 2. Then configure base url using one of the interfaces provided, or write your own:
 
-### Basic Interface:
+### Base Url Interface:
 
 ``` php
-use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator;
+use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BaseUrlHashtagifyUrlGenerator;
 use TechWilk\TwigHashtagify\HashtagifyExtension;
 use TechWilk\TwigHashtagify\HashtagifyRuntimeLoader;
 
-$urlGenerator = new BasicHashtagifyUrlGenerator('https://example.com/hashtag/');
+$urlGenerator = new BaseUrlHashtagifyUrlGenerator('https://example.com/hashtag/');
 $twig->addExtension(new HashtagifyExtension());
 $twig->addRuntimeLoader(new HashtagifyRuntimeLoader($urlGenerator));
 ```

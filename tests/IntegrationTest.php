@@ -11,7 +11,7 @@ class IntegrationTest extends IntegrationTestCase
 
     public function getRuntimeLoaders()
     {
-        $urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator('http://example.com/hashtag/');
+        $urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BaseUrlHashtagifyUrlGenerator('http://example.com/hashtag/');
 
         return [
             new HashtagifyRuntimeLoader($urlGenerator),

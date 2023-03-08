@@ -4,7 +4,7 @@ namespace TechWilk\TwigHashtagify\HashtagifyUrlGenerator;
 
 use TechWilk\TwigHashtagify\HashtagifyUrlGeneratorInterface;
 
-class BasicHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
+class BaseUrlHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
 {
     private $urlBase;
 
