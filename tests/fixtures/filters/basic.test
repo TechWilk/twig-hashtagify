@@ -2,7 +2,10 @@
 "hashtagify" filter
 --TEMPLATE--
 {{ ('This is some text with #hashtags in it')|hashtagify }}
-{{ ('This is some text with #hashtags in it')|hashtagify('https://example.com/base-test/') }}
+{{ ('This is some text with #hashtags in it')|hashtagify('https://example.org/base-test/') }}
+{{ ('This is some text with an #invalid-hyphonated-hashtag in it')|hashtagify }}
+{{ ('These are #Three#Separate#Hashtags')|hashtagify }}
+{{ ('#CamelCase hashtags should be a single #hashtag')|hashtagify }}
 {{ textWithoutHashtags|hashtagify }}
 {{ textWithHashtags|hashtagify }}
 --DATA--
@@ -12,6 +15,9 @@ return [
 ]
 --EXPECT--
 This is some text with  <a href="http://example.com/hashtag/hashtags">#hashtags</a> in it
-This is some text with  <a href="https://example.com/base-test/hashtags">#hashtags</a> in it
+This is some text with  <a href="https://example.org/base-test/hashtags">#hashtags</a> in it
+This is some text with an  <a href="http://example.com/hashtag/invalid">#invalid</a>-hyphonated-hashtag in it
+These are  <a href="http://example.com/hashtag/Three">#Three</a> <a href="http://example.com/hashtag/Separate">#Separate</a> <a href="http://example.com/hashtag/Hashtags">#Hashtags</a>
+ <a href="http://example.com/hashtag/CamelCase">#CamelCase</a> hashtags should be a single  <a href="http://example.com/hashtag/hashtag">#hashtag</a>
 Example text with no hashtags
 Contains  <a href="http://example.com/hashtag/blue">#blue</a> and  <a href="http://example.com/hashtag/green">#green</a> things
