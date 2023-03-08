@@ -2,6 +2,8 @@
 
 namespace TechWilk\TwigHashtagify;
 
+use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator;
+
 class Hashtagify extends \Twig\Extension\AbstractExtension
 {
     private $urlGenerator;
@@ -13,18 +15,28 @@ class Hashtagify extends \Twig\Extension\AbstractExtension
 
     public function hashtagify(string $text, ?string $baseUrl = ''): string
     {
-        $url = $this->getUrl($baseUrl);
+        $callback = function ($matches) use ($baseUrl) {
+            $url = $this->getUrl($matches[1], $baseUrl);
 
-        return preg_replace('/#(\w+)/', ' <a href="'.htmlentities($url, ENT_QUOTES).'">#$1</a>', $text);
+            return ' <a href="'.htmlentities($url, ENT_QUOTES).'">'.htmlentities('#'.$matches[1], ENT_QUOTES).'</a>';
+        };
+
+        return preg_replace_callback(
+            '/#(\w+)/',
+            $callback,
+            $text
+        );
     }
 
-    protected function getUrl(string $baseUrl): string
+    protected function getUrl(string $hashtag, string $baseUrl): string
     {
+        $urlGenerator = $this->urlGenerator;
+
         if ($baseUrl !== '') {
-            return $baseUrl.'$1';
+            $urlGenerator = new BasicHashtagifyUrlGenerator($baseUrl);
         }
 
-        return $this->urlGenerator->urlForHashtag('$1');
+        return $urlGenerator->urlForHashtag($hashtag);
     }
 
     public function getFilters()
