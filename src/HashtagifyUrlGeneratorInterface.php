@@ -4,5 +4,5 @@ namespace TechWilk\TwigHashtagify;
 
 interface HashtagifyUrlGeneratorInterface
 {
-    public function urlForHashtag($hashtag);
+    public function urlForHashtag(string $hashtag);
 }

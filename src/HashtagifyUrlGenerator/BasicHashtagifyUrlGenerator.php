@@ -8,13 +8,13 @@ class BasicHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
 {
     private $urlBase;
 
-    public function __construct($urlBase)
+    public function __construct(string $urlBase)
     {
         $this->urlBase = $urlBase;
     }
 
-    public function urlForHashtag($hashtag)
+    public function urlForHashtag(string $hashtag)
     {
-        return $this->urlBase.$hashtag;
+        return $this->urlBase.urlencode($hashtag);
     }
 }

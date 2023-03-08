@@ -18,7 +18,7 @@ class SlimHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
         $this->argumentName = $argumentName;
     }
 
-    public function urlForHashtag($hashtag)
+    public function urlForHashtag(string $hashtag)
     {
         return $this->routeParser->urlFor($this->routeName, [$this->argumentName => $hashtag]);
     }
