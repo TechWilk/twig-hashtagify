@@ -1,7 +1,7 @@
 {
     "name": "techwilk/twig-hashtagify",
     "description": "TWIG filter to turn hashtags into html links.",
-    "keywords": ["twig","extension","hashtag", "filter"],
+    "keywords": ["twig","extension","hashtag", "filter", "slim"],
     "homepage": "https://github.com/TechWilk/TWIG-Hashtagify",
     "type": "library",
     "license": "MIT",
