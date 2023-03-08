@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace TechWilk\TwigHashtagify;
 
-use TechWilk\TwigHashtagify\Hashtagify;
-use TechWilk\TwigHashtagify\HashtagifyUrlGeneratorInterface;
 use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
 class HashtagifyRuntimeLoader implements RuntimeLoaderInterface

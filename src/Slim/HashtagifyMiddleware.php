@@ -10,8 +10,8 @@ use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use RuntimeException;
 use Slim\App;
-use Slim\Views\Twig;
 use Slim\Interfaces\RouteParserInterface;
+use Slim\Views\Twig;
 use TechWilk\TwigHashtagify\HashtagifyRuntimeLoader;
 use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\SlimHashtagifyUrlGenerator;
 

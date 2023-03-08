@@ -8,7 +8,6 @@ use Twig\Test\IntegrationTestCase;
 
 class IntegrationTest extends IntegrationTestCase
 {
-
     public function getRuntimeLoaders()
     {
         $urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BaseUrlHashtagifyUrlGenerator('http://example.com/hashtag/');
