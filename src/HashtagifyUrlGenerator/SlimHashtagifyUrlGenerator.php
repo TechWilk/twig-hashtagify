@@ -2,23 +2,24 @@
 
 namespace TechWilk\TwigHashtagify\HashtagifyUrlGenerator;
 
+use Slim\Interfaces\RouteParserInterface;
 use TechWilk\TwigHashtagify\HashtagifyUrlGeneratorInterface;
 
 class SlimHashtagifyUrlGenerator implements HashtagifyUrlGeneratorInterface
 {
-    private $router;
+    private $routeParser;
     private $routeName;
     private $argumentName;
 
-    public function __construct(\Slim\Router $router, $routeName, $argumentName)
+    public function __construct(RouteParserInterface $routeParser, string $routeName, string $argumentName)
     {
-        $this->router = $router;
+        $this->routeParser = $routeParser;
         $this->routeName = $routeName;
         $this->argumentName = $argumentName;
     }
 
-    public function urlForHashtag($hashtag)
+    public function urlForHashtag(string $hashtag)
     {
-        return $this->router->pathFor($this->routeName, [$this->argumentName => $hashtag]);
+        return $this->routeParser->urlFor($this->routeName, [$this->argumentName => $hashtag]);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace TechWilk\TwigHashtagify;
 
-use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator;
+use TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BaseUrlHashtagifyUrlGenerator;
 
-class Hashtagify extends \Twig\Extension\AbstractExtension
+class Hashtagify
 {
     private $urlGenerator;
 
@@ -33,23 +33,9 @@ class Hashtagify extends \Twig\Extension\AbstractExtension
         $urlGenerator = $this->urlGenerator;
 
         if ($baseUrl !== '') {
-            $urlGenerator = new BasicHashtagifyUrlGenerator($baseUrl);
+            $urlGenerator = new BaseUrlHashtagifyUrlGenerator($baseUrl);
         }
 
         return $urlGenerator->urlForHashtag($hashtag);
-    }
-
-    public function getFilters()
-    {
-        return [
-            new \Twig\TwigFilter(
-                'hashtagify',
-                [$this, 'hashtagify'],
-                [
-                    'pre_escape' => 'html',
-                    'is_safe'    => ['html'],
-                ]
-            ),
-        ];
     }
 }

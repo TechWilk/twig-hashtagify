@@ -2,17 +2,25 @@
 
 namespace TechWilk\TwigHashtagify\Tests;
 
-use TechWilk\TwigHashtagify\Hashtagify;
+use TechWilk\TwigHashtagify\HashtagifyExtension;
+use TechWilk\TwigHashtagify\HashtagifyRuntimeLoader;
 use Twig\Test\IntegrationTestCase;
 
 class IntegrationTest extends IntegrationTestCase
 {
-    public function getExtensions()
+    public function getRuntimeLoaders()
     {
-        $urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BasicHashtagifyUrlGenerator('http://example.com/hashtag/');
+        $urlGenerator = new \TechWilk\TwigHashtagify\HashtagifyUrlGenerator\BaseUrlHashtagifyUrlGenerator('http://example.com/hashtag/');
 
         return [
-            new Hashtagify($urlGenerator),
+            new HashtagifyRuntimeLoader($urlGenerator),
+        ];
+    }
+
+    public function getExtensions()
+    {
+        return [
+            new HashtagifyExtension(),
         ];
     }
 
